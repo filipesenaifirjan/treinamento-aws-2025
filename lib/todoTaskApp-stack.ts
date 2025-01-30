@@ -5,10 +5,12 @@ import * as lambdaNodeJS from "aws-cdk-lib/aws-lambda-nodejs"
 
 
 export class TodoTaskAppStack extends cdk.Stack {
+    taskHandler: lambdaNodeJS.NodejsFunction
+
     constructor(scope: Construct, id: string, props: cdk.StackProps) {
         super(scope, id, props);
 
-        const taskHandler = new lambdaNodeJS.NodejsFunction(this, "TaskHandlerFunction", {
+        this.taskHandler = new lambdaNodeJS.NodejsFunction(this, "TaskHandlerFunction", {
             functionName: "TaskHandlerFunction",
             entry: "lambda/taskHandlerFunction.ts",
             handler: "handler",
