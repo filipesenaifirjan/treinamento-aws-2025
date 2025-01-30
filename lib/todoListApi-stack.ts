@@ -8,7 +8,7 @@ export interface TodoListApiStackProps extends cdk.StackProps {
     lambdaTodoTaskApp: lambdaNodeJs.NodejsFunction
 }
 
-export class TodoTaskAppStack extends cdk.Stack {
+export class TodoListApiStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props: TodoListApiStackProps) {
         super(scope, id, props)
         

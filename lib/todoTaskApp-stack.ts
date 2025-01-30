@@ -3,7 +3,6 @@ import { Construct } from "constructs"
 import * as lambda from "aws-cdk-lib/aws-lambda"
 import * as lambdaNodeJS from "aws-cdk-lib/aws-lambda-nodejs"
 
-
 export class TodoTaskAppStack extends cdk.Stack {
     taskHandler: lambdaNodeJS.NodejsFunction
 
@@ -12,7 +11,7 @@ export class TodoTaskAppStack extends cdk.Stack {
 
         this.taskHandler = new lambdaNodeJS.NodejsFunction(this, "TaskHandlerFunction", {
             functionName: "TaskHandlerFunction",
-            entry: "lambda/taskHandlerFunction.ts",
+            entry: "lambda/tasks/taskHandlerFunction.ts", // Atualize o caminho aqui
             handler: "handler",
             runtime: lambda.Runtime.NODEJS_20_X,
             memorySize: 512,

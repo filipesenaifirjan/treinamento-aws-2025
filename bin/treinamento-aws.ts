@@ -2,7 +2,9 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { TodoListApiStack } from '../lib/todoListApi-stack';
-import { TodoTaskAppStack } from '../lib/todoTaskApp-Stack';
+import { TodoTaskAppStack } from '../lib/todoTaskApp-stack';
+import { TodoListLayersStack } from '../lib/todoListLayers-stack';
+//import { TodoListLayersStack } from '../lib/todoListLayers-stack';
 
 const app = new cdk.App();
 
@@ -33,4 +35,5 @@ const todoListApiStack = new TodoListApiStack(app, "TodoListApiStack", {
   env: env,
   tags: tags
 })
+
 todoListApiStack.addDependency(todoTaskAppStack)

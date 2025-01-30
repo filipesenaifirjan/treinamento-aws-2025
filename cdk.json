@@ -1,4 +1,4 @@
-{
+{ 
   "app": "npx ts-node --prefer-ts-exts bin/treinamento-aws.ts",
   "watch": {
     "include": [
@@ -14,6 +14,7 @@
       "yarn.lock",
       "node_modules",
       "test"
+     
     ]
   },
   "context": {
